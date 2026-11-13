@@ -12,6 +12,10 @@ export default defineConfig(({ mode }) => ({
   // so Vite hashes them and the single file inlines them. A public folder would
   // not be inlined, so there is none.
   publicDir: false,
+  server: {
+    host: true,
+    allowedHosts: true,
+  },
   plugins: mode === 'single' ? [viteSingleFile()] : [],
   // The game's page only: other pages in the project (one-shots in prototypes/)
   // are not scanned for packages.
