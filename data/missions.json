@@ -1,0 +1,606 @@
+{
+  "apollo_11": {
+    "id": "apollo_11",
+    "title": "Apollo 11: The First Lunar Landing",
+    "code": "AS-506",
+    "program": "Apollo",
+    "agency": "NASA",
+    "launch_date": "1969-07-16",
+    "origin_body": "earth",
+    "target_body": "moon",
+    "description": "Launch on Saturn V from Kennedy Space Center LC-39A, insert into Low Earth Parking Orbit, perform Trans-Lunar Injection (TLI), execute Lunar Orbit Insertion (LOI), descend to Mare Tranquillitatis with the Lunar Module Eagle, and return safely to Earth splashdown in the Pacific Ocean.",
+    "primary_spacecraft_ids": [
+      "apollo_csm_columbia",
+      "apollo_lm_eagle"
+    ],
+    "launch_vehicle_id": "saturn_v",
+    "launch_site": "Kennedy Space Center LC-39A, Florida",
+    "trajectory_type": "translunar",
+    "initial_orbit": {
+      "apoapsis_altitude_km": 185.9,
+      "periapsis_altitude_km": 183.2,
+      "inclination_deg": 32.52,
+      "notes": "Low Earth Orbit (LEO) parking orbit used for spacecraft systems checkout prior to TLI."
+    },
+    "target_orbit": {
+      "apoapsis_altitude_km": 111.1,
+      "periapsis_altitude_km": 101.9,
+      "inclination_deg": 1.25,
+      "destination_name": "Low Lunar Orbit & Mare Tranquillitatis Surface"
+    },
+    "delta_v_budget": {
+      "minimum_required_kms": 3.90,
+      "recommended_kms": 4.25,
+      "contingency_margin_percent": 9.0
+    },
+    "flight_phases": [
+      {
+        "phase_number": 1,
+        "phase_name": "Earth Launch & LEO Insertion",
+        "duration_days": 0.1,
+        "required_delta_v_kms": 9.30,
+        "description": "Saturn V S-IC, S-II, and initial S-IVB burn placing CSM and LM into 185 km parking orbit."
+      },
+      {
+        "phase_number": 2,
+        "phase_name": "Trans-Lunar Injection (TLI)",
+        "duration_days": 0.1,
+        "required_delta_v_kms": 3.05,
+        "description": "Second S-IVB ignition accelerating the stack to 10.8 km/s onto translunar trajectory."
+      },
+      {
+        "phase_number": 3,
+        "phase_name": "Lunar Orbit Insertion (LOI)",
+        "duration_days": 0.2,
+        "required_delta_v_kms": 0.89,
+        "description": "Service Propulsion System (SPS) retrograde burn behind the Moon to establish lunar orbit."
+      },
+      {
+        "phase_number": 4,
+        "phase_name": "Lunar Powered Descent & Landing",
+        "duration_days": 0.1,
+        "required_delta_v_kms": 2.10,
+        "description": "Descent stage TRW engine throttled to gently lower LM Eagle onto the lunar surface."
+      },
+      {
+        "phase_number": 5,
+        "phase_name": "Lunar Ascent & Rendezvous",
+        "duration_days": 0.2,
+        "required_delta_v_kms": 1.85,
+        "description": "Ascent stage ignition launching from the Moon to dock with Columbia in lunar orbit."
+      },
+      {
+        "phase_number": 6,
+        "phase_name": "Trans-Earth Injection (TEI) & Reentry",
+        "duration_days": 2.5,
+        "required_delta_v_kms": 1.05,
+        "description": "Final SPS burn sending Columbia back to Earth for high-speed atmospheric skip reentry."
+      }
+    ],
+    "primary_objectives": [
+      {
+        "id": "obj_tli",
+        "title": "Execute Trans-Lunar Injection (TLI)",
+        "description": "Accelerate spacecraft stack into hyperbolic lunar transfer orbit within burn window.",
+        "type": "orbital_maneuver",
+        "target_metric": "delta_v",
+        "target_value": 3.05,
+        "unit": "km/s"
+      },
+      {
+        "id": "obj_loi",
+        "title": "Perform Lunar Orbit Insertion",
+        "description": "Capture into stable low lunar orbit with periapsis near 100 km.",
+        "type": "orbital_insertion",
+        "target_metric": "periapsis_altitude",
+        "target_value": 100.0,
+        "unit": "km"
+      },
+      {
+        "id": "obj_landing",
+        "title": "Touchdown at Mare Tranquillitatis",
+        "description": "Execute powered descent and safely land LM Eagle with remaining fuel margin.",
+        "type": "surface_landing",
+        "target_metric": "vertical_velocity",
+        "target_value": 1.5,
+        "unit": "m/s"
+      }
+    ],
+    "secondary_objectives": [
+      {
+        "id": "obj_deploy_easep",
+        "title": "Deploy Early Apollo Science Package",
+        "description": "Install seismometer and laser ranging retroreflector on the lunar surface.",
+        "type": "scientific_deployment"
+      },
+      {
+        "id": "obj_rendezvous",
+        "title": "Perform Orbital Rendezvous & Docking",
+        "description": "Ascend from lunar surface and execute radar-guided docking with CSM Columbia.",
+        "type": "orbital_docking"
+      }
+    ],
+    "historical_milestones": [
+      {
+        "timestamp": "1969-07-16T13:32:00Z",
+        "event": "Liftoff from Launch Complex 39A."
+      },
+      {
+        "timestamp": "1969-07-20T20:17:40Z",
+        "event": "Lunar Module Eagle touches down: 'Houston, Tranquility Base here. The Eagle has landed.'"
+      },
+      {
+        "timestamp": "1969-07-24T16:50:35Z",
+        "event": "Columbia command module splashes down in the Pacific Ocean."
+      }
+    ]
+  },
+
+  "voyager_1_2": {
+    "id": "voyager_1_2",
+    "title": "Voyager 1 & 2: Exploration Beyond the Solar System",
+    "code": "VGR-1-2",
+    "program": "Voyager",
+    "agency": "NASA",
+    "launch_date": "1977-08-20",
+    "origin_body": "earth",
+    "target_body": "interstellar_space",
+    "description": "Twin robotic spacecraft utilizing a rare planetary alignment of Jupiter, Saturn, Uranus, and Neptune to explore the outer solar system, map planetary magnetospheres, and enter interstellar space.",
+    "primary_spacecraft_ids": [
+      "voyager_probe"
+    ],
+    "launch_vehicle_id": "titan_iiie_centaur",
+    "launch_site": "Cape Canaveral SLC-41, Florida",
+    "trajectory_type": "heliocentric_interstellar",
+    "initial_orbit": {
+      "apoapsis_altitude_km": 160.0,
+      "periapsis_altitude_km": 140.0,
+      "inclination_deg": 28.5,
+      "notes": "Short parking orbit before Centaur second burn and Star 37E solid kick burn."
+    },
+    "target_orbit": {
+      "apoapsis_altitude_km": 999999999.0,
+      "periapsis_altitude_km": 778500000.0,
+      "inclination_deg": 35.0,
+      "destination_name": "Hyperbolic Escape Trajectory beyond Heliopause"
+    },
+    "delta_v_budget": {
+      "minimum_required_kms": 15.20,
+      "recommended_kms": 15.80,
+      "contingency_margin_percent": 4.0
+    },
+    "flight_phases": [
+      {
+        "phase_number": 1,
+        "phase_name": "Launch & Direct Escape Injection",
+        "duration_days": 0.1,
+        "required_delta_v_kms": 15.30,
+        "description": "Titan IIIE, Centaur D-1T, and Star 37E boost the probe to a heliocentric escape velocity of 15.3 km/s (C3 = 106 km^2/s^2)."
+      },
+      {
+        "phase_number": 2,
+        "phase_name": "Jupiter Flyby & Gravity Assist",
+        "duration_days": 546.0,
+        "required_delta_v_kms": 0.05,
+        "description": "Gravitational assist from Jupiter bends trajectory toward Saturn and increases probe velocity by ~16 km/s."
+      },
+      {
+        "phase_number": 3,
+        "phase_name": "Saturn & Titan Flyby",
+        "duration_days": 620.0,
+        "required_delta_v_kms": 0.04,
+        "description": "Saturn gravity assist deflects Voyager 1 north out of the ecliptic plane toward interstellar space."
+      },
+      {
+        "phase_number": 4,
+        "phase_name": "Interstellar Cruise & Heliopause Crossing",
+        "duration_days": 13000.0,
+        "required_delta_v_kms": 0.01,
+        "description": "Continuous cruise recording solar wind termination shock and crossing the heliopause into interstellar plasma."
+      }
+    ],
+    "primary_objectives": [
+      {
+        "id": "obj_escape_c3",
+        "title": "Achieve Interplanetary Escape Velocity",
+        "description": "Achieve hyperbolic escape velocity relative to Earth with high characteristic energy.",
+        "type": "escape_trajectory",
+        "target_metric": "c3_energy",
+        "target_value": 106.0,
+        "unit": "km^2/s^2"
+      },
+      {
+        "id": "obj_jupiter_encounter",
+        "title": "Execute Jupiter Gravity Assist",
+        "description": "Fly within 350,000 km of Jupiter to gain orbital momentum and image the Great Red Spot.",
+        "type": "gravity_assist",
+        "target_metric": "periapsis_distance",
+        "target_value": 350000.0,
+        "unit": "km"
+      },
+      {
+        "id": "obj_heliopause",
+        "title": "Cross the Heliopause",
+        "description": "Detect the boundary where the solar wind gives way to interstellar matter.",
+        "type": "deep_space_exploration",
+        "target_metric": "distance_from_sun",
+        "target_value": 121.0,
+        "unit": "AU"
+      }
+    ],
+    "secondary_objectives": [
+      {
+        "id": "obj_golden_record",
+        "title": "Preserve the Golden Record",
+        "description": "Safeguard humanity's cultural and scientific message into deep space.",
+        "type": "interstellar_artifact"
+      }
+    ],
+    "historical_milestones": [
+      {
+        "timestamp": "1977-09-05T12:56:00Z",
+        "event": "Voyager 1 launches from Cape Canaveral."
+      },
+      {
+        "timestamp": "1979-03-05T00:00:00Z",
+        "event": "Voyager 1 closest approach to Jupiter, discovering active volcanic eruptions on Io."
+      },
+      {
+        "timestamp": "2012-08-25T00:00:00Z",
+        "event": "Voyager 1 crosses the heliopause into interstellar space at 121 AU from the Sun."
+      }
+    ]
+  },
+
+  "hubble_deployment_sts_31": {
+    "id": "hubble_deployment_sts_31",
+    "title": "Hubble Space Telescope Deployment (STS-31)",
+    "code": "STS-31",
+    "program": "Space Shuttle / Great Observatories",
+    "agency": "NASA",
+    "launch_date": "1990-04-24",
+    "origin_body": "earth",
+    "target_body": "earth",
+    "description": "Space Shuttle Discovery (STS-31) launches with the Hubble Space Telescope in its payload bay, climbing to an unprecedented Shuttle altitude of 612 km to deploy the optical observatory with the Canadarm.",
+    "primary_spacecraft_ids": [
+      "hubble_space_telescope",
+      "space_shuttle_discovery"
+    ],
+    "launch_vehicle_id": "space_shuttle_discovery",
+    "launch_site": "Kennedy Space Center LC-39B, Florida",
+    "trajectory_type": "low_earth_orbit",
+    "initial_orbit": {
+      "apoapsis_altitude_km": 615.0,
+      "periapsis_altitude_km": 609.0,
+      "inclination_deg": 28.47,
+      "notes": "Direct insertion high-altitude orbit to minimize residual atmospheric drag on the telescope."
+    },
+    "target_orbit": {
+      "apoapsis_altitude_km": 612.0,
+      "periapsis_altitude_km": 612.0,
+      "inclination_deg": 28.47,
+      "destination_name": "High Low Earth Orbit (612 km Circular)"
+    },
+    "delta_v_budget": {
+      "minimum_required_kms": 9.45,
+      "recommended_kms": 9.70,
+      "contingency_margin_percent": 3.0
+    },
+    "flight_phases": [
+      {
+        "phase_number": 1,
+        "phase_name": "Shuttle Ascent & Direct OMS Insertion",
+        "duration_days": 0.1,
+        "required_delta_v_kms": 9.35,
+        "description": "3x RS-25 SSME engines and twin SRBs lift Discovery; dual OMS burns circularize orbit at 612 km."
+      },
+      {
+        "phase_number": 2,
+        "phase_name": "Hubble Unberthing & Systems Power-up",
+        "duration_days": 0.5,
+        "required_delta_v_kms": 0.0,
+        "description": "Payload bay doors open; Remote Manipulator System (Canadarm) grapples and lifts Hubble into deployment position."
+      },
+      {
+        "phase_number": 3,
+        "phase_name": "Solar Array & Antenna Deployment",
+        "duration_days": 0.3,
+        "required_delta_v_kms": 0.0,
+        "description": "Solar array wings unroll; high-gain dish antennas articulate into position."
+      },
+      {
+        "phase_number": 4,
+        "phase_name": "Hubble Release & Shuttle Separation",
+        "duration_days": 0.1,
+        "required_delta_v_kms": 0.02,
+        "description": "Canadarm releases Hubble; Discovery performs gentle RCS separation burn to prevent plume contamination."
+      },
+      {
+        "phase_number": 5,
+        "phase_name": "De-orbit Burn & Landing",
+        "duration_days": 4.0,
+        "required_delta_v_kms": 0.10,
+        "description": "Discovery executes OMS retrograde de-orbit burn and lands at Edwards Air Force Base Runway 22."
+      }
+    ],
+    "primary_objectives": [
+      {
+        "id": "obj_high_orbit",
+        "title": "Achieve High LEO Altitude (>600 km)",
+        "description": "Deliver Shuttle Discovery and Hubble to record orbit altitude above 600 km.",
+        "type": "orbital_insertion",
+        "target_metric": "altitude",
+        "target_value": 600.0,
+        "unit": "km"
+      },
+      {
+        "id": "obj_canadarm_deploy",
+        "title": "Execute Canadarm Payload Release",
+        "description": "Safely lift, verify solar array unfurl, and release the telescope without physical contact.",
+        "type": "payload_deployment",
+        "target_metric": "relative_separation_speed",
+        "target_value": 0.1,
+        "unit": "m/s"
+      }
+    ],
+    "secondary_objectives": [
+      {
+        "id": "obj_zero_contamination",
+        "title": "Prevent Mirror Plume Contamination",
+        "description": "Perform separation maneuvers using Low-Z RCS thruster modes to protect optical mirrors.",
+        "type": "contamination_control"
+      }
+    ],
+    "historical_milestones": [
+      {
+        "timestamp": "1990-04-24T12:33:51Z",
+        "event": "Discovery lifts off on STS-31."
+      },
+      {
+        "timestamp": "1990-04-25T19:38:00Z",
+        "event": "Hubble Space Telescope successfully released from Canadarm into free flight."
+      },
+      {
+        "timestamp": "1990-04-29T13:49:57Z",
+        "event": "Discovery lands smoothly at Edwards Air Force Base."
+      }
+    ]
+  },
+
+  "jwst_l2_deployment": {
+    "id": "jwst_l2_deployment",
+    "title": "James Webb Space Telescope: Journey to Lagrange Point 2",
+    "code": "JWST-L2",
+    "program": "Next Generation Space Telescope",
+    "agency": "NASA / ESA / CSA",
+    "launch_date": "2021-12-25",
+    "origin_body": "earth",
+    "target_body": "sun_earth_l2",
+    "description": "Launch on an Ariane 5 ECA from Guiana Space Centre, direct injection onto trans-L2 trajectory, execute complex 29-day deployment sequence (solar array, sunshield, secondary mirror, primary mirror wings), and insert into halo orbit around Sun-Earth L2.",
+    "primary_spacecraft_ids": [
+      "jwst_observatory"
+    ],
+    "launch_vehicle_id": "ariane_5_eca",
+    "launch_site": "Guiana Space Centre ELA-3, Kourou, French Guiana",
+    "trajectory_type": "lagrange_l2_halo",
+    "initial_orbit": {
+      "apoapsis_altitude_km": 1050000.0,
+      "periapsis_altitude_km": 250.0,
+      "inclination_deg": 5.2,
+      "notes": "Direct injection trans-L2 hyperbolic trajectory by Ariane 5 ESC-A upper stage."
+    },
+    "target_orbit": {
+      "apoapsis_altitude_km": 800000.0,
+      "periapsis_altitude_km": 250000.0,
+      "inclination_deg": 0.0,
+      "destination_name": "Sun-Earth Lagrange Point 2 (L2) Halo Orbit (~1.5 Million km from Earth)"
+    },
+    "delta_v_budget": {
+      "minimum_required_kms": 11.20,
+      "recommended_kms": 11.45,
+      "contingency_margin_percent": 8.0
+    },
+    "flight_phases": [
+      {
+        "phase_number": 1,
+        "phase_name": "Launch & Direct Trans-L2 Injection",
+        "duration_days": 0.05,
+        "required_delta_v_kms": 11.15,
+        "description": "Ariane 5 Vulcain 2 core and HM7B upper stage insert Webb directly into trans-L2 transfer orbit."
+      },
+      {
+        "phase_number": 2,
+        "phase_name": "Mid-Course Correction Burn (MCC-1a)",
+        "duration_days": 0.5,
+        "required_delta_v_kms": 0.03,
+        "description": "Webb onboard SCAT thrusters fire 12.5 hours after launch to fine-tune trajectory toward L2."
+      },
+      {
+        "phase_number": 3,
+        "phase_name": "Sunshield & Optical Deployments",
+        "duration_days": 14.0,
+        "required_delta_v_kms": 0.0,
+        "description": "Tensioning of 5-layer Kapton sunshield, deployment of secondary mirror tripod and primary mirror side wings."
+      },
+      {
+        "phase_number": 4,
+        "phase_name": "L2 Orbit Insertion Burn (MCC-2)",
+        "duration_days": 15.0,
+        "required_delta_v_kms": 0.04,
+        "description": "Final 5-minute burn inserting observatory into quasi-periodic halo orbit around Sun-Earth L2."
+      }
+    ],
+    "primary_objectives": [
+      {
+        "id": "obj_trans_l2_injection",
+        "title": "Achieve Trans-L2 Trajectory",
+        "description": "Ariane 5 precise injection avoiding any overspeed burn (Webb cannot turn around due to sensitive optics).",
+        "type": "trajectory_insertion",
+        "target_metric": "apogee_distance",
+        "target_value": 1500000.0,
+        "unit": "km"
+      },
+      {
+        "id": "obj_sunshield_deploy",
+        "title": "Deploy 5-Layer Kapton Sunshield",
+        "description": "Fully extend and tension all five sunshield layers to isolate mirror from solar infrared radiation.",
+        "type": "mechanical_deployment",
+        "target_metric": "cryogenic_temp",
+        "target_value": 50.0,
+        "unit": "K"
+      },
+      {
+        "id": "obj_l2_halo_insertion",
+        "title": "L2 Halo Orbit Insertion",
+        "description": "Execute MCC-2 burn to enter stable periodic halo orbit around Lagrange Point 2.",
+        "type": "orbital_insertion",
+        "target_metric": "halo_orbit_radius",
+        "target_value": 400000.0,
+        "unit": "km"
+      }
+    ],
+    "secondary_objectives": [
+      {
+        "id": "obj_fuel_preservation",
+        "title": "Preserve 20-Year Fuel Lifetime",
+        "description": "Minimize propellant expenditure during MCC maneuvers to exceed nominal 10-year design life.",
+        "type": "efficiency_benchmark"
+      }
+    ],
+    "historical_milestones": [
+      {
+        "timestamp": "2021-12-25T12:20:00Z",
+        "event": "Ariane 5 liftoff from Europe's Spaceport in French Guiana."
+      },
+      {
+        "timestamp": "2022-01-08T18:17:00Z",
+        "event": "Primary mirror second wing latches into place, completing all major mechanical deployments."
+      },
+      {
+        "timestamp": "2022-01-24T19:00:00Z",
+        "event": "Webb completes MCC-2 burn, safely entering halo orbit around Sun-Earth L2."
+      }
+    ]
+  },
+
+  "curiosity_msl": {
+    "id": "curiosity_msl",
+    "title": "Mars Science Laboratory: Curiosity Rover Landing",
+    "code": "MSL",
+    "program": "Mars Exploration Program",
+    "agency": "NASA",
+    "launch_date": "2011-11-26",
+    "origin_body": "earth",
+    "target_body": "mars",
+    "description": "Launch on an Atlas V 541, execute Trans-Mars Injection (TMI) and 254-day interplanetary cruise, perform guided atmospheric entry with hypersonic lifting body, deploy supersonic parachute, ignite Sky Crane Mars Landing Engines, and lower Curiosity onto the floor of Gale Crater.",
+    "primary_spacecraft_ids": [
+      "curiosity_msl_stack",
+      "curiosity_rover"
+    ],
+    "launch_vehicle_id": "atlas_v_541",
+    "launch_site": "Cape Canaveral SLC-41, Florida",
+    "trajectory_type": "trans_mars_injection",
+    "initial_orbit": {
+      "apoapsis_altitude_km": 320.0,
+      "periapsis_altitude_km": 165.0,
+      "inclination_deg": 35.8,
+      "notes": "Atlas V Centaur parking orbit prior to TMI burn."
+    },
+    "target_orbit": {
+      "apoapsis_altitude_km": 0.0,
+      "periapsis_altitude_km": 0.0,
+      "inclination_deg": 0.0,
+      "destination_name": "Mars Surface (Gale Crater / Aeolis Palus, -4.59° S, 137.44° E)"
+    },
+    "delta_v_budget": {
+      "minimum_required_kms": 13.10,
+      "recommended_kms": 13.50,
+      "contingency_margin_percent": 5.0
+    },
+    "flight_phases": [
+      {
+        "phase_number": 1,
+        "phase_name": "Earth Launch & Trans-Mars Injection",
+        "duration_days": 0.1,
+        "required_delta_v_kms": 13.10,
+        "description": "Atlas V 541 lifts stack; Centaur upper stage reignites to impart 3.8 km/s TMI burn toward Mars."
+      },
+      {
+        "phase_number": 2,
+        "phase_name": "Interplanetary Cruise & Trajectory Correction",
+        "duration_days": 254.0,
+        "required_delta_v_kms": 0.05,
+        "description": "Spin-stabilized cruise with 4 Trajectory Correction Maneuvers (TCM) targeting entry corridor."
+      },
+      {
+        "phase_number": 3,
+        "phase_name": "Hypersonic Guided Entry",
+        "duration_days": 0.005,
+        "required_delta_v_kms": 5.80,
+        "description": "Guided lifting entry in aeroshell with PICA heatshield dissipating 99% of kinetic energy."
+      },
+      {
+        "phase_number": 4,
+        "phase_name": "Parachute Deceleration & Heatshield Jettison",
+        "duration_days": 0.002,
+        "required_delta_v_kms": 0.35,
+        "description": "Supersonic disk-gap-band parachute deploys at Mach 1.7; radar altimeter locks onto surface."
+      },
+      {
+        "phase_number": 5,
+        "phase_name": "Sky Crane Powered Descent & Touchdown",
+        "duration_days": 0.001,
+        "required_delta_v_kms": 0.30,
+        "description": "Sky Crane ignites 8x throttleable MLE thrusters, lowers Curiosity on tethers, cuts bridles, and flies away."
+      }
+    ],
+    "primary_objectives": [
+      {
+        "id": "obj_tmi",
+        "title": "Execute Trans-Mars Injection (TMI)",
+        "description": "Accelerate spacecraft onto hyperbolic Mars intercept trajectory.",
+        "type": "interplanetary_injection",
+        "target_metric": "c3_energy",
+        "target_value": 14.5,
+        "unit": "km^2/s^2"
+      },
+      {
+        "id": "obj_guided_entry",
+        "title": "Precision Guided Atmospheric Entry",
+        "description": "Guide lifting entry to deliver spacecraft inside a tight 20 x 7 km landing ellipse.",
+        "type": "atmospheric_entry",
+        "target_metric": "entry_flight_path_angle",
+        "target_value": -15.5,
+        "unit": "degrees"
+      },
+      {
+        "id": "obj_sky_crane_landing",
+        "title": "Execute Sky Crane Touchdown",
+        "description": "Lower rover on 7.5m tethers and achieve soft touchdown (<0.75 m/s) in Gale Crater.",
+        "type": "planetary_landing",
+        "target_metric": "touchdown_velocity",
+        "target_value": 0.6,
+        "unit": "m/s"
+      }
+    ],
+    "secondary_objectives": [
+      {
+        "id": "obj_sample_analysis",
+        "title": "Evaluate Past Habitability in Gale Crater",
+        "description": "Sample ancient mudstones and test for organic carbon compounds using SAM and CheMin.",
+        "type": "astrobiology_science"
+      }
+    ],
+    "historical_milestones": [
+      {
+        "timestamp": "2011-11-26T15:02:00Z",
+        "event": "Atlas V 541 lifts off from Space Launch Complex 41."
+      },
+      {
+        "timestamp": "2012-08-06T05:17:57Z",
+        "event": "Touchdown in Gale Crater: 'Touchdown confirmed. We're safe on Mars.'"
+      }
+    ]
+  }
+}
+

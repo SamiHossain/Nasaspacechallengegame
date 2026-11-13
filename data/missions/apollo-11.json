@@ -1,0 +1,71 @@
+{
+  "id": "apollo-11",
+  "title": "Apollo 11: Humanity's First Moon Landing",
+  "code": "AS-506",
+  "program": "Apollo",
+  "historicalDate": "1969-07-16",
+  "description": "Launch from Kennedy Space Center Pad 39A, insert into Low Earth Parking Orbit (185 x 185 km), perform Trans-Lunar Injection (TLI), execute Lunar Orbit Insertion (LOI), descend to the Sea of Tranquility, and return safely to Earth.",
+  "originBodyId": "earth",
+  "targetBodyId": "moon",
+  "compatibleSpacecraftIds": ["apollo-csm-lm"],
+  "launchWindow": {
+    "epochStartUtc": "1969-07-16T13:32:00Z",
+    "epochEndUtc": "1969-07-16T17:32:00Z"
+  },
+  "initialOrbit": {
+    "apoapsisAltitudeKm": 185.9,
+    "periapsisAltitudeKm": 183.2,
+    "inclinationDeg": 32.52
+  },
+  "targetOrbit": {
+    "apoapsisAltitudeKm": 111.0,
+    "periapsisAltitudeKm": 101.0,
+    "inclinationDeg": 1.25
+  },
+  "minimumDeltaVBudgetKms": 3.90,
+  "recommendedDeltaVBudgetKms": 4.25,
+  "primaryObjectives": [
+    {
+      "id": "obj-tli",
+      "title": "Execute Trans-Lunar Injection (TLI)",
+      "description": "Perform translunar burn with delta-v of ~3.05 km/s to establish free-return lunar transfer trajectory.",
+      "type": "reach_orbit",
+      "targetValue": 3.05,
+      "tolerance": 0.05,
+      "isOptional": false
+    },
+    {
+      "id": "obj-loi",
+      "title": "Lunar Orbit Insertion (LOI)",
+      "description": "Ignite the Service Propulsion System (SPS) retrograde burn behind the Moon to enter stable lunar orbit.",
+      "type": "orbital_insertion",
+      "targetValue": 0.89,
+      "tolerance": 0.04,
+      "isOptional": false
+    },
+    {
+      "id": "obj-landing",
+      "title": "Lunar Module Touchdown",
+      "description": "Execute powered descent burn with LM DPS to land at Mare Tranquillitatis.",
+      "type": "landing",
+      "isOptional": false
+    }
+  ],
+  "secondaryObjectives": [
+    {
+      "id": "obj-fuel-efficiency",
+      "title": "Preserve Fuel Margin",
+      "description": "Maintain at least 5% propellant reserves upon landing.",
+      "type": "delta_v_efficiency",
+      "targetValue": 0.05,
+      "isOptional": true
+    }
+  ],
+  "scoringCriteria": {
+    "maxPoints": 1000,
+    "fuelEfficiencyWeight": 0.4,
+    "trajectoryAccuracyWeight": 0.4,
+    "timeEfficiencyWeight": 0.2
+  }
+}
+

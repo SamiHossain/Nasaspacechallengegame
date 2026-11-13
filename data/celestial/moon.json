@@ -1,0 +1,17 @@
+{
+  "id": "moon",
+  "name": "Moon",
+  "category": "moon",
+  "parentBodyId": "earth",
+  "massKg": 7.342e22,
+  "radiusKm": 1737.4,
+  "gravitationalParameterMu": 4902.800066,
+  "surfaceGravityMs2": 1.62,
+  "semiMajorAxisKm": 384400.0,
+  "orbitalPeriodDays": 27.3216,
+  "orbitalInclinationDeg": 5.145,
+  "sphereOfInfluenceKm": 66100.0,
+  "rotationPeriodHours": 655.72,
+  "colorHex": "#bdc3c7"
+}
+

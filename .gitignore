@@ -1,0 +1,32 @@
+# Node & Dependencies
+node_modules/
+dist/
+build/
+.cache/
+
+# CCGS local settings & state
+project.local.yaml
+production/session-state/active.md.bak
+*.log
+
+# Windows & IDE
+powershell.cmd
+powershell.exe
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+
+# === Web: Vite, Vitest and Playwright output ===
+dist-single/
+*.zip
+.vitest/
+/test-results/
+/playwright-report/

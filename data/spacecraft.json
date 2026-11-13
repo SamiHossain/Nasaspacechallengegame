@@ -1,0 +1,732 @@
+{
+  "apollo_csm_columbia": {
+    "id": "apollo_csm_columbia",
+    "name": "Apollo 11 Command and Service Module (Columbia)",
+    "program": "Apollo",
+    "agency": "NASA",
+    "category": "crewed_spacecraft",
+    "description": "The command and service module (CSM-107 'Columbia') served as the primary transport vehicle for the Apollo 11 crew between Earth and lunar orbit.",
+    "historical_period": "1969",
+    "crew_capacity": 3,
+    "dry_mass_kg": 11900.0,
+    "wet_mass_kg": 30300.0,
+    "max_payload_capacity_kg": 1050.0,
+    "dimensions": {
+      "height_m": 11.0,
+      "diameter_m": 3.9,
+      "span_m": 3.9
+    },
+    "power_system": {
+      "type": "fuel_cells",
+      "output_watts": 1400.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Service Module (SM)",
+        "dry_mass_kg": 6110.0,
+        "propellant_mass_kg": 18410.0,
+        "propellant_type": "Aerozine 50 / Nitrogen Tetroxide (N2O4)",
+        "propulsion": {
+          "engine_name": "Aerojet AJ10-137 SPS",
+          "engine_count": 1,
+          "thrust_vacuum_kn": 91.2,
+          "isp_vacuum_s": 314.0,
+          "throttleable": false,
+          "reignitions_max": 50
+        },
+        "delta_v_vacuum_kms": 2.80
+      }
+    ],
+    "scientific_payloads": [
+      {
+        "name": "Lunar Surface Photography Suite & Sextant",
+        "mass_kg": 45.0,
+        "power_watts": 60.0,
+        "description": "High-resolution orbital film cameras and optical navigation instruments."
+      }
+    ],
+    "notes": "Service Propulsion System provides Lunar Orbit Insertion (LOI) and Trans-Earth Injection (TEI) burns."
+  },
+
+  "apollo_lm_eagle": {
+    "id": "apollo_lm_eagle",
+    "name": "Apollo 11 Lunar Module (Eagle)",
+    "program": "Apollo",
+    "agency": "NASA",
+    "category": "lunar_module",
+    "description": "The two-stage Lunar Module (LM-5 'Eagle') carried astronauts Neil Armstrong and Buzz Aldrin from lunar orbit to the surface of the Moon and back.",
+    "historical_period": "1969",
+    "crew_capacity": 2,
+    "dry_mass_kg": 4284.0,
+    "wet_mass_kg": 15200.0,
+    "max_payload_capacity_kg": 250.0,
+    "dimensions": {
+      "height_m": 7.04,
+      "diameter_m": 4.22,
+      "span_m": 9.4
+    },
+    "power_system": {
+      "type": "batteries",
+      "output_watts": 1200.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Descent Stage",
+        "dry_mass_kg": 2134.0,
+        "propellant_mass_kg": 8200.0,
+        "propellant_type": "Aerozine 50 / Nitrogen Tetroxide (N2O4)",
+        "propulsion": {
+          "engine_name": "TRW Descent Propulsion System (DPS)",
+          "engine_count": 1,
+          "thrust_vacuum_kn": 45.0,
+          "isp_vacuum_s": 311.0,
+          "throttleable": true,
+          "reignitions_max": 3
+        },
+        "delta_v_vacuum_kms": 2.50
+      },
+      {
+        "stage_number": 2,
+        "stage_name": "Ascent Stage",
+        "dry_mass_kg": 2150.0,
+        "propellant_mass_kg": 2350.0,
+        "propellant_type": "Aerozine 50 / Nitrogen Tetroxide (N2O4)",
+        "propulsion": {
+          "engine_name": "Bell Aerospace Ascent Propulsion System (APS)",
+          "engine_count": 1,
+          "thrust_vacuum_kn": 15.6,
+          "isp_vacuum_s": 311.0,
+          "throttleable": false,
+          "reignitions_max": 2
+        },
+        "delta_v_vacuum_kms": 2.22
+      }
+    ],
+    "scientific_payloads": [
+      {
+        "name": "EASEP (Early Apollo Scientific Experiments Package)",
+        "mass_kg": 77.0,
+        "power_watts": 0.0,
+        "description": "Passive Seismic Experiment Package (PSEP) and Lunar Laser Ranging Retroreflector (LRRR)."
+      }
+    ],
+    "notes": "Descent stage functions as launch pad for the ascent stage during lunar liftoff."
+  },
+
+  "saturn_v": {
+    "id": "saturn_v",
+    "name": "Saturn V Launch Vehicle",
+    "program": "Apollo",
+    "agency": "NASA",
+    "category": "launch_vehicle",
+    "description": "The heavy-lift super booster used for the Apollo lunar missions, consisting of S-IC, S-II, and S-IVB stages.",
+    "historical_period": "1967-1973",
+    "crew_capacity": 3,
+    "dry_mass_kg": 130000.0,
+    "wet_mass_kg": 2970000.0,
+    "max_payload_capacity_kg": 140000.0,
+    "dimensions": {
+      "height_m": 110.6,
+      "diameter_m": 10.1,
+      "span_m": 10.1
+    },
+    "power_system": {
+      "type": "batteries",
+      "output_watts": 2500.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "S-IC First Stage",
+        "dry_mass_kg": 130000.0,
+        "propellant_mass_kg": 2160000.0,
+        "propellant_type": "RP-1 / Liquid Oxygen (LOX)",
+        "propulsion": {
+          "engine_name": "Rocketdyne F-1",
+          "engine_count": 5,
+          "thrust_vacuum_kn": 35100.0,
+          "isp_vacuum_s": 304.0,
+          "throttleable": false,
+          "reignitions_max": 1
+        },
+        "delta_v_vacuum_kms": 3.66
+      },
+      {
+        "stage_number": 2,
+        "stage_name": "S-II Second Stage",
+        "dry_mass_kg": 40100.0,
+        "propellant_mass_kg": 450000.0,
+        "propellant_type": "Liquid Hydrogen (LH2) / LOX",
+        "propulsion": {
+          "engine_name": "Rocketdyne J-2",
+          "engine_count": 5,
+          "thrust_vacuum_kn": 5000.0,
+          "isp_vacuum_s": 421.0,
+          "throttleable": false,
+          "reignitions_max": 1
+        },
+        "delta_v_vacuum_kms": 4.10
+      },
+      {
+        "stage_number": 3,
+        "stage_name": "S-IVB Third Stage",
+        "dry_mass_kg": 15200.0,
+        "propellant_mass_kg": 109000.0,
+        "propellant_type": "Liquid Hydrogen (LH2) / LOX",
+        "propulsion": {
+          "engine_name": "Rocketdyne J-2",
+          "engine_count": 1,
+          "thrust_vacuum_kn": 1000.0,
+          "isp_vacuum_s": 421.0,
+          "throttleable": false,
+          "reignitions_max": 2
+        },
+        "delta_v_vacuum_kms": 4.20
+      }
+    ],
+    "scientific_payloads": [],
+    "notes": "S-IVB executes two critical burns: orbital insertion into LEO, and the Trans-Lunar Injection (TLI) burn."
+  },
+
+  "voyager_probe": {
+    "id": "voyager_probe",
+    "name": "Voyager 1 & 2 Interstellar Spacecraft",
+    "program": "Voyager",
+    "agency": "NASA",
+    "category": "space_probe",
+    "description": "Twin robotic interstellar probes launched in 1977 to explore the outer gas giants and journey into interstellar space beyond the heliopause.",
+    "historical_period": "1977-Present",
+    "crew_capacity": 0,
+    "dry_mass_kg": 722.0,
+    "wet_mass_kg": 825.0,
+    "max_payload_capacity_kg": 105.0,
+    "dimensions": {
+      "height_m": 3.7,
+      "diameter_m": 3.66,
+      "span_m": 3.66
+    },
+    "power_system": {
+      "type": "rtg",
+      "output_watts": 470.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Attitude & Trajectory Correction Module",
+        "dry_mass_kg": 722.0,
+        "propellant_mass_kg": 103.0,
+        "propellant_type": "Hydrazine (N2H4)",
+        "propulsion": {
+          "engine_name": "Aerojet MR-106 Thruster",
+          "engine_count": 16,
+          "thrust_vacuum_kn": 0.0142,
+          "isp_vacuum_s": 230.0,
+          "throttleable": false,
+          "reignitions_max": 1000
+        },
+        "delta_v_vacuum_kms": 0.19
+      }
+    ],
+    "scientific_payloads": [
+      {
+        "name": "Imaging Science Subsystem (ISS)",
+        "mass_kg": 38.2,
+        "power_watts": 21.5,
+        "description": "Narrow-angle and wide-angle television camera optics for planetary imaging."
+      },
+      {
+        "name": "Magnetometer (MAG)",
+        "mass_kg": 5.6,
+        "power_watts": 2.2,
+        "description": "Triaxial fluxgate magnetometers mounted on a 13-meter deployable boom."
+      },
+      {
+        "name": "Plasma Science & Cosmic Ray Subsystems",
+        "mass_kg": 17.4,
+        "power_watts": 13.9,
+        "description": "Detectors for solar wind ions, interstellar cosmic rays, and low-energy charged particles."
+      },
+      {
+        "name": "The Golden Record",
+        "mass_kg": 1.2,
+        "power_watts": 0.0,
+        "description": "Gold-plated copper phonograph record carrying sounds and images of Earth."
+      }
+    ],
+    "notes": "Relies on planetary gravitational assists (Jupiter, Saturn) rather than onboard propellant for hyperbolic escape velocity."
+  },
+
+  "titan_iiie_centaur": {
+    "id": "titan_iiie_centaur",
+    "name": "Titan IIIE / Centaur Launch Vehicle",
+    "program": "Voyager / Viking",
+    "agency": "NASA",
+    "category": "launch_vehicle",
+    "description": "High-energy launch vehicle pairing the Titan III booster with a Centaur D-1T cryogenic upper stage and Star 37E solid kick motor.",
+    "historical_period": "1974-1977",
+    "crew_capacity": 0,
+    "dry_mass_kg": 45000.0,
+    "wet_mass_kg": 633000.0,
+    "max_payload_capacity_kg": 15400.0,
+    "dimensions": {
+      "height_m": 48.8,
+      "diameter_m": 3.05,
+      "span_m": 9.2
+    },
+    "power_system": {
+      "type": "batteries",
+      "output_watts": 800.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Titan IIIE Core & Solid Boosters",
+        "dry_mass_kg": 40000.0,
+        "propellant_mass_kg": 550000.0,
+        "propellant_type": "Aerozine 50 / NTO & Solid (HTPB)",
+        "propulsion": {
+          "engine_name": "Aerojet LR87-AJ-11 & 2x UA1205 SRM",
+          "engine_count": 4,
+          "thrust_vacuum_kn": 12000.0,
+          "isp_vacuum_s": 302.0,
+          "throttleable": false,
+          "reignitions_max": 1
+        },
+        "delta_v_vacuum_kms": 5.40
+      },
+      {
+        "stage_number": 2,
+        "stage_name": "Centaur D-1T High-Energy Upper Stage",
+        "dry_mass_kg": 2700.0,
+        "propellant_mass_kg": 13900.0,
+        "propellant_type": "Liquid Hydrogen (LH2) / LOX",
+        "propulsion": {
+          "engine_name": "Pratt & Whitney RL10A-3-3",
+          "engine_count": 2,
+          "thrust_vacuum_kn": 133.4,
+          "isp_vacuum_s": 444.0,
+          "throttleable": false,
+          "reignitions_max": 3
+        },
+        "delta_v_vacuum_kms": 4.80
+      },
+      {
+        "stage_number": 3,
+        "stage_name": "Star 37E Solid Propulsion Module (Kick Stage)",
+        "dry_mass_kg": 105.0,
+        "propellant_mass_kg": 1140.0,
+        "propellant_type": "Solid Rocket Propellant (PBAA/AP)",
+        "propulsion": {
+          "engine_name": "Thiokol TE-M-364-4 (Star 37E)",
+          "engine_count": 1,
+          "thrust_vacuum_kn": 68.0,
+          "isp_vacuum_s": 284.0,
+          "throttleable": false,
+          "reignitions_max": 1
+        },
+        "delta_v_vacuum_kms": 3.85
+      }
+    ],
+    "scientific_payloads": [],
+    "notes": "Centaur D-1T and Star 37E kick motor imparted a record hyperbolic excess energy (C3 = 106 km^2/s^2) for direct Jupiter transit."
+  },
+
+  "hubble_space_telescope": {
+    "id": "hubble_space_telescope",
+    "name": "Hubble Space Telescope (HST)",
+    "program": "Great Observatories",
+    "agency": "NASA",
+    "category": "space_telescope",
+    "description": "A 2.4-meter aperture optical, ultraviolet, and near-infrared space telescope deployed in Low Earth Orbit.",
+    "historical_period": "1990-Present",
+    "crew_capacity": 0,
+    "dry_mass_kg": 11110.0,
+    "wet_mass_kg": 11110.0,
+    "max_payload_capacity_kg": 0.0,
+    "dimensions": {
+      "height_m": 13.2,
+      "diameter_m": 4.2,
+      "span_m": 4.2
+    },
+    "power_system": {
+      "type": "solar",
+      "output_watts": 2800.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Reaction Wheel & Magnetic Torquer Attitude System",
+        "dry_mass_kg": 11110.0,
+        "propellant_mass_kg": 0.0,
+        "propellant_type": "None (Reaction Wheels & Magnetic Torquers)",
+        "propulsion": {
+          "engine_name": "Collins Reaction Wheel Assemblies (RWA)",
+          "engine_count": 4,
+          "thrust_vacuum_kn": 0.0,
+          "isp_vacuum_s": 0.0,
+          "throttleable": false,
+          "reignitions_max": 0
+        },
+        "delta_v_vacuum_kms": 0.0
+      }
+    ],
+    "scientific_payloads": [
+      {
+        "name": "Wide Field and Planetary Camera (WFPC)",
+        "mass_kg": 280.0,
+        "power_watts": 150.0,
+        "description": "High-resolution 48-filter optical imaging system."
+      },
+      {
+        "name": "Faint Object Camera (FOC)",
+        "mass_kg": 320.0,
+        "power_watts": 110.0,
+        "description": "High-resolution UV/optical imaging for distant galaxies."
+      },
+      {
+        "name": "Goddard High Resolution Spectrograph (GHRS)",
+        "mass_kg": 315.0,
+        "power_watts": 120.0,
+        "description": "Ultraviolet spectrograph exploring interstellar medium chemistry."
+      }
+    ],
+    "notes": "HST carries zero onboard propellant thrusters to prevent volatile gas condensation on the primary optical mirror."
+  },
+
+  "space_shuttle_discovery": {
+    "id": "space_shuttle_discovery",
+    "name": "Space Shuttle Discovery (STS-31)",
+    "program": "Space Shuttle",
+    "agency": "NASA",
+    "category": "crewed_spacecraft",
+    "description": "Orbiter Vehicle OV-103 'Discovery' equipped with the Remote Manipulator System (Canadarm), used to deliver Hubble to a record 612 km orbit.",
+    "historical_period": "1984-2011",
+    "crew_capacity": 7,
+    "dry_mass_kg": 77600.0,
+    "wet_mass_kg": 118000.0,
+    "max_payload_capacity_kg": 25000.0,
+    "dimensions": {
+      "height_m": 17.2,
+      "diameter_m": 8.7,
+      "span_m": 23.79
+    },
+    "power_system": {
+      "type": "fuel_cells",
+      "output_watts": 21000.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Orbiter Maneuvering System (OMS)",
+        "dry_mass_kg": 77600.0,
+        "propellant_mass_kg": 11200.0,
+        "propellant_type": "Monomethylhydrazine (MMH) / NTO",
+        "propulsion": {
+          "engine_name": "Aerojet AJ10-190 OMS",
+          "engine_count": 2,
+          "thrust_vacuum_kn": 53.4,
+          "isp_vacuum_s": 316.0,
+          "throttleable": false,
+          "reignitions_max": 20
+        },
+        "delta_v_vacuum_kms": 0.31
+      }
+    ],
+    "scientific_payloads": [
+      {
+        "name": "Shuttle Remote Manipulator System (Canadarm)",
+        "mass_kg": 410.0,
+        "power_watts": 1000.0,
+        "description": "15.2-meter robotic manipulator arm used to deploy and service payloads."
+      }
+    ],
+    "notes": "Lift-off boosted by 2x Solid Rocket Boosters and External Tank feeding 3x RS-25 (SSME) engines."
+  },
+
+  "jwst_observatory": {
+    "id": "jwst_observatory",
+    "name": "James Webb Space Telescope (JWST)",
+    "program": "Next Generation Space Telescope",
+    "agency": "NASA",
+    "category": "space_telescope",
+    "description": "NASA's premier infrared observatory operating in a halo orbit around the Sun-Earth Lagrange Point 2 (L2), equipped with a 6.5m gold-coated beryllium primary mirror.",
+    "historical_period": "2021-Present",
+    "crew_capacity": 0,
+    "dry_mass_kg": 5993.0,
+    "wet_mass_kg": 6161.4,
+    "max_payload_capacity_kg": 0.0,
+    "dimensions": {
+      "height_m": 8.0,
+      "diameter_m": 6.5,
+      "span_m": 21.2
+    },
+    "power_system": {
+      "type": "solar",
+      "output_watts": 2000.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Secondary Combustion Augmented Thruster (SCAT) Bus",
+        "dry_mass_kg": 5993.0,
+        "propellant_mass_kg": 301.0,
+        "propellant_type": "Hydrazine / Nitrogen Tetroxide (NTO)",
+        "propulsion": {
+          "engine_name": "Aerojet SCAT & MRE-1",
+          "engine_count": 20,
+          "thrust_vacuum_kn": 0.088,
+          "isp_vacuum_s": 305.0,
+          "throttleable": false,
+          "reignitions_max": 200
+        },
+        "delta_v_vacuum_kms": 0.15
+      }
+    ],
+    "scientific_payloads": [
+      {
+        "name": "NIRCam (Near-Infrared Camera)",
+        "mass_kg": 150.0,
+        "power_watts": 100.0,
+        "description": "Primary imager detecting light from the earliest stars and galaxies."
+      },
+      {
+        "name": "MIRI (Mid-Infrared Instrument)",
+        "mass_kg": 115.0,
+        "power_watts": 100.0,
+        "description": "Camera and spectrograph cooled to 7 K via closed-cycle helium cryocooler."
+      },
+      {
+        "name": "NIRSpec & FGS/NIRISS",
+        "mass_kg": 250.0,
+        "power_watts": 130.0,
+        "description": "Multi-object spectrograph capable of analyzing 100 simultaneous astronomical spectra."
+      }
+    ],
+    "notes": "Five-layer deployable Kapton sunshield keeps scientific instrumentation passively cryo-cooled below 50 K."
+  },
+
+  "ariane_5_eca": {
+    "id": "ariane_5_eca",
+    "name": "Ariane 5 ECA Launch Vehicle",
+    "program": "Ariane / JWST Partnership",
+    "agency": "ESA",
+    "category": "launch_vehicle",
+    "description": "European heavy-lift launch vehicle contributed by ESA for the launch of JWST from the Guiana Space Centre in Kourou.",
+    "historical_period": "2002-2023",
+    "crew_capacity": 0,
+    "dry_mass_kg": 42000.0,
+    "wet_mass_kg": 777000.0,
+    "max_payload_capacity_kg": 10500.0,
+    "dimensions": {
+      "height_m": 50.5,
+      "diameter_m": 5.4,
+      "span_m": 12.2
+    },
+    "power_system": {
+      "type": "batteries",
+      "output_watts": 1500.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "EPC Cryogenic Main Stage & 2x EAP Boosters",
+        "dry_mass_kg": 37000.0,
+        "propellant_mass_kg": 680000.0,
+        "propellant_type": "LH2 / LOX & Solid (HTPB)",
+        "propulsion": {
+          "engine_name": "Snecma Vulcain 2 & 2x EAP",
+          "engine_count": 3,
+          "thrust_vacuum_kn": 15000.0,
+          "isp_vacuum_s": 431.0,
+          "throttleable": false,
+          "reignitions_max": 1
+        },
+        "delta_v_vacuum_kms": 5.80
+      },
+      {
+        "stage_number": 2,
+        "stage_name": "ESC-A Cryogenic Upper Stage",
+        "dry_mass_kg": 4540.0,
+        "propellant_mass_kg": 14900.0,
+        "propellant_type": "Liquid Hydrogen (LH2) / LOX",
+        "propulsion": {
+          "engine_name": "Snecma HM7B",
+          "engine_count": 1,
+          "thrust_vacuum_kn": 67.0,
+          "isp_vacuum_s": 446.0,
+          "throttleable": false,
+          "reignitions_max": 1
+        },
+        "delta_v_vacuum_kms": 4.90
+      }
+    ],
+    "scientific_payloads": [],
+    "notes": "Delivered JWST directly onto its trans-L2 trajectory with exceptional accuracy, saving years of telescope propellant."
+  },
+
+  "curiosity_msl_stack": {
+    "id": "curiosity_msl_stack",
+    "name": "Mars Science Laboratory Cruise Stage, Aeroshell & Sky Crane",
+    "program": "Mars Exploration Program",
+    "agency": "NASA",
+    "category": "descent_sky_crane",
+    "description": "The integrated cruise and EDL (Entry, Descent, and Landing) system that transported the Curiosity rover to Mars and lowered it into Gale Crater via the Sky Crane maneuver.",
+    "historical_period": "2011-2012",
+    "crew_capacity": 0,
+    "dry_mass_kg": 2994.0,
+    "wet_mass_kg": 3893.0,
+    "max_payload_capacity_kg": 899.0,
+    "dimensions": {
+      "height_m": 3.0,
+      "diameter_m": 4.5,
+      "span_m": 4.5
+    },
+    "power_system": {
+      "type": "solar",
+      "output_watts": 2500.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Cruise Stage",
+        "dry_mass_kg": 469.0,
+        "propellant_mass_kg": 70.0,
+        "propellant_type": "Hydrazine (N2H4)",
+        "propulsion": {
+          "engine_name": "Aerojet MR-106 Thrusters",
+          "engine_count": 8,
+          "thrust_vacuum_kn": 0.04,
+          "isp_vacuum_s": 225.0,
+          "throttleable": false,
+          "reignitions_max": 200
+        },
+        "delta_v_vacuum_kms": 0.06
+      },
+      {
+        "stage_number": 2,
+        "stage_name": "Descent Stage (Sky Crane)",
+        "dry_mass_kg": 1070.0,
+        "propellant_mass_kg": 390.0,
+        "propellant_type": "Hydrazine (N2H4)",
+        "propulsion": {
+          "engine_name": "Aerojet Mars Landing Engines (MLE / C-DRE)",
+          "engine_count": 8,
+          "thrust_vacuum_kn": 24.8,
+          "isp_vacuum_s": 221.0,
+          "throttleable": true,
+          "reignitions_max": 1
+        },
+        "delta_v_vacuum_kms": 0.35
+      }
+    ],
+    "scientific_payloads": [],
+    "notes": "Sky Crane used 8 throttleable Mars Landing Engines (MLE) to decelerate and lower the rover on three nylon bridles before cutting cables and flying away."
+  },
+
+  "curiosity_rover": {
+    "id": "curiosity_rover",
+    "name": "Curiosity Mars Science Laboratory Rover",
+    "program": "Mars Exploration Program",
+    "agency": "NASA",
+    "category": "planetary_rover",
+    "description": "Car-sized robotic rover designed to explore Gale Crater on Mars as part of NASA's Mars Science Laboratory mission.",
+    "historical_period": "2011-Present",
+    "crew_capacity": 0,
+    "dry_mass_kg": 899.0,
+    "wet_mass_kg": 899.0,
+    "max_payload_capacity_kg": 75.0,
+    "dimensions": {
+      "height_m": 2.2,
+      "diameter_m": 2.7,
+      "span_m": 3.0
+    },
+    "power_system": {
+      "type": "rtg",
+      "output_watts": 110.0
+    },
+    "stages": [],
+    "scientific_payloads": [
+      {
+        "name": "Mastcam & ChemCam",
+        "mass_kg": 16.5,
+        "power_watts": 35.0,
+        "description": "Multispectral stereo cameras and laser-induced breakdown spectroscopy for remote rock vapor analysis."
+      },
+      {
+        "name": "Sample Analysis at Mars (SAM)",
+        "mass_kg": 40.0,
+        "power_watts": 90.0,
+        "description": "Suite of mass spectrometer, gas chromatograph, and tunable laser spectrometer analyzing organic compounds."
+      },
+      {
+        "name": "CheMin (Chemistry and Mineralogy)",
+        "mass_kg": 10.0,
+        "power_watts": 40.0,
+        "description": "X-ray powder diffraction and fluorescence instrument for identifying mineral structures."
+      }
+    ],
+    "notes": "Powered by a Multi-Mission Radioisotope Thermoelectric Generator (MMRTG) utilizing Plutonium-238 decay heat."
+  },
+
+  "atlas_v_541": {
+    "id": "atlas_v_541",
+    "name": "Atlas V 541 Launch Vehicle",
+    "program": "Mars Exploration / ULA",
+    "agency": "NASA",
+    "category": "launch_vehicle",
+    "description": "United Launch Alliance Atlas V in the 541 configuration: 5-meter payload fairing, 4 solid rocket boosters, single-engine Centaur.",
+    "historical_period": "2011-2020",
+    "crew_capacity": 0,
+    "dry_mass_kg": 41200.0,
+    "wet_mass_kg": 531000.0,
+    "max_payload_capacity_kg": 17440.0,
+    "dimensions": {
+      "height_m": 58.3,
+      "diameter_m": 3.81,
+      "span_m": 5.4
+    },
+    "power_system": {
+      "type": "batteries",
+      "output_watts": 1200.0
+    },
+    "stages": [
+      {
+        "stage_number": 1,
+        "stage_name": "Common Core Booster & 4x AJ-60A SRBs",
+        "dry_mass_kg": 39000.0,
+        "propellant_mass_kg": 444000.0,
+        "propellant_type": "RP-1 / LOX & Solid (HTPB)",
+        "propulsion": {
+          "engine_name": "RD-180 & 4x AJ-60A",
+          "engine_count": 5,
+          "thrust_vacuum_kn": 10900.0,
+          "isp_vacuum_s": 338.0,
+          "throttleable": true,
+          "reignitions_max": 1
+        },
+        "delta_v_vacuum_kms": 5.60
+      },
+      {
+        "stage_number": 2,
+        "stage_name": "Centaur Upper Stage (SEC)",
+        "dry_mass_kg": 2247.0,
+        "propellant_mass_kg": 20830.0,
+        "propellant_type": "Liquid Hydrogen (LH2) / LOX",
+        "propulsion": {
+          "engine_name": "Pratt & Whitney RL10A-4-2",
+          "engine_count": 1,
+          "thrust_vacuum_kn": 99.2,
+          "isp_vacuum_s": 451.0,
+          "throttleable": false,
+          "reignitions_max": 2
+        },
+        "delta_v_vacuum_kms": 5.10
+      }
+    ],
+    "scientific_payloads": [],
+    "notes": "Centaur upper stage performed the Trans-Mars Injection (TMI) burn, imparting 3,800 m/s delta-v to send MSL Curiosity on an interplanetary trajectory."
+  }
+}
+

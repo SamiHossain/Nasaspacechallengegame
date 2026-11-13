@@ -1,0 +1,372 @@
+# Game World Entity Registry
+#
+# PURPOSE: Single source of truth for all named game-world facts that appear
+# in more than one document. Skills check this before writing new content to
+# detect cross-doc inconsistencies at authoring time.
+#
+# RULES:
+#   - Only register facts that cross system boundaries.
+#   - Never delete entries — set status: deprecated instead.
+#   - source: is the authoritative GDD/doc that "owns" this fact.
+#   - referenced_by: list of paths referencing this entry.
+#
+# LAYOUT:
+#   - section key at column 0
+#   - entry dash at column 2 (- name: <name>)
+#   - fields sit two columns past dash (column 4)
+
+version: 1
+last_updated: "2026-11-13"
+
+# ─── ENTITIES ────────────────────────────────────────────────────────────────
+entities:
+  - name: apollo_csm_columbia
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: crewed_spacecraft
+    agency: NASA
+    program: Apollo
+    dry_mass_kg: 11900.0
+    wet_mass_kg: 30300.0
+    propulsion_engine: "Aerojet AJ10-137 SPS"
+    thrust_kn: 91.2
+    isp_s: 314.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: apollo_lm_eagle
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: lunar_module
+    agency: NASA
+    program: Apollo
+    dry_mass_kg: 4284.0
+    wet_mass_kg: 15200.0
+    propulsion_engine: "TRW DPS (Descent) / Bell APS (Ascent)"
+    thrust_kn: 45.0
+    isp_s: 311.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: saturn_v
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: launch_vehicle
+    agency: NASA
+    program: Apollo
+    dry_mass_kg: 130000.0
+    wet_mass_kg: 2970000.0
+    payload_capacity_leo_kg: 140000.0
+    payload_capacity_tli_kg: 47000.0
+    liftoff_thrust_kn: 35100.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: voyager_probe
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: space_probe
+    agency: NASA
+    program: Voyager
+    dry_mass_kg: 722.0
+    wet_mass_kg: 825.0
+    power_type: rtg
+    power_watts: 470.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: titan_iiie_centaur
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: launch_vehicle
+    agency: NASA
+    program: Voyager
+    dry_mass_kg: 45000.0
+    wet_mass_kg: 633000.0
+    liftoff_thrust_kn: 12000.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: hubble_space_telescope
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: space_telescope
+    agency: NASA
+    program: Great Observatories
+    dry_mass_kg: 11110.0
+    wet_mass_kg: 11110.0
+    aperture_diameter_m: 2.4
+    power_watts: 2800.0
+    orbit_altitude_km: 612.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: space_shuttle_discovery
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: crewed_spacecraft
+    agency: NASA
+    program: Space Shuttle
+    orbiter_vehicle: OV-103
+    dry_mass_kg: 77600.0
+    wet_mass_kg: 118000.0
+    payload_capacity_kg: 25000.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: jwst_observatory
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: space_telescope
+    agency: NASA
+    program: Next Generation Space Telescope
+    dry_mass_kg: 5993.0
+    wet_mass_kg: 6161.4
+    primary_mirror_diameter_m: 6.5
+    orbit_location: "Sun-Earth L2 Halo"
+    added: 2026-11-13
+    revised: ""
+
+  - name: ariane_5_eca
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: launch_vehicle
+    agency: ESA
+    program: Ariane / JWST Partnership
+    dry_mass_kg: 42000.0
+    wet_mass_kg: 777000.0
+    liftoff_thrust_kn: 15000.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: curiosity_msl_stack
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: descent_sky_crane
+    agency: NASA
+    program: Mars Exploration Program
+    dry_mass_kg: 2994.0
+    wet_mass_kg: 3893.0
+    landing_system: "Sky Crane (8x MLE)"
+    added: 2026-11-13
+    revised: ""
+
+  - name: curiosity_rover
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: planetary_rover
+    agency: NASA
+    program: Mars Exploration Program
+    mass_kg: 899.0
+    power_type: mmrtg
+    landing_site: "Gale Crater, Mars"
+    added: 2026-11-13
+    revised: ""
+
+  - name: atlas_v_541
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/spacecraft.json
+      - data/missions.json
+    category: launch_vehicle
+    agency: NASA
+    program: Mars Exploration / ULA
+    dry_mass_kg: 41200.0
+    wet_mass_kg: 531000.0
+    liftoff_thrust_kn: 10900.0
+    added: 2026-11-13
+    revised: ""
+
+  - name: apollo_11
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/missions.json
+    category: mission
+    agency: NASA
+    program: Apollo
+    target: Moon
+    launch_year: 1969
+    min_delta_v_kms: 3.90
+    added: 2026-11-13
+    revised: ""
+
+  - name: voyager_1_2
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/missions.json
+    category: mission
+    agency: NASA
+    program: Voyager
+    target: "Outer Planets & Interstellar Space"
+    launch_year: 1977
+    min_delta_v_kms: 15.20
+    added: 2026-11-13
+    revised: ""
+
+  - name: hubble_deployment_sts_31
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/missions.json
+    category: mission
+    agency: NASA
+    program: Space Shuttle
+    target: "High Low Earth Orbit (612 km)"
+    launch_year: 1990
+    min_delta_v_kms: 9.45
+    added: 2026-11-13
+    revised: ""
+
+  - name: jwst_l2_deployment
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/missions.json
+    category: mission
+    agency: NASA
+    program: Next Generation Space Telescope
+    target: "Sun-Earth L2 Lagrange Point"
+    launch_year: 2021
+    min_delta_v_kms: 11.20
+    added: 2026-11-13
+    revised: ""
+
+  - name: curiosity_msl
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/missions.json
+    category: mission
+    agency: NASA
+    program: Mars Exploration Program
+    target: "Gale Crater, Mars"
+    launch_year: 2011
+    min_delta_v_kms: 13.10
+    added: 2026-11-13
+    revised: ""
+
+# ─── ITEMS ───────────────────────────────────────────────────────────────────
+items: []
+
+# ─── FORMULAS ────────────────────────────────────────────────────────────────
+formulas:
+  - name: tsiolkovsky_rocket_equation
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/index.ts
+    variables:
+      - isp_s
+      - g0_ms2
+      - m0_wet_kg
+      - mf_dry_kg
+    output_range: [0.0, 50.0]
+    expression: "delta_v = (isp_s * g0_ms2 * ln(m0_wet_kg / mf_dry_kg)) / 1000.0"
+    notes: "Calculates achievable vacuum delta-V in km/s for a single propulsion stage."
+    added: 2026-11-13
+    revised: ""
+
+  - name: vis_viva_equation
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/index.ts
+    variables:
+      - mu_km3s2
+      - r_km
+      - a_km
+    output_range: [0.0, 50.0]
+    expression: "v = sqrt(mu_km3s2 * (2.0 / r_km - 1.0 / a_km))"
+    notes: "Computes orbital velocity (km/s) at distance r given parent body gravitational parameter mu and semi-major axis a."
+    added: 2026-11-13
+    revised: ""
+
+# ─── CONSTANTS ───────────────────────────────────────────────────────────────
+constants:
+  - name: standard_gravity_g0
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/index.ts
+    value: 9.80665
+    unit: m/s^2
+    added: 2026-11-13
+    revised: ""
+
+  - name: earth_gravitational_parameter_mu
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/celestial/earth.json
+    value: 398600.4418
+    unit: km^3/s^2
+    added: 2026-11-13
+    revised: ""
+
+  - name: moon_gravitational_parameter_mu
+    status: active
+    source: design/game-brief.md
+    referenced_by:
+      - design/game-brief.md
+      - data/celestial/moon.json
+    value: 4902.800066
+    unit: km^3/s^2
+    added: 2026-11-13
+    revised: ""

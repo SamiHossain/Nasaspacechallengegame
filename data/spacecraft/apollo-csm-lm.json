@@ -1,0 +1,83 @@
+{
+  "id": "apollo-csm-lm",
+  "name": "Apollo CSM & Lunar Module",
+  "program": "Apollo",
+  "agency": "NASA",
+  "description": "Authentic Apollo Command/Service Module (CSM) coupled with the Apollo Lunar Module (LM). Equipped with the Aerojet AJ10-137 Service Propulsion System (SPS) and the TRW Descent Propulsion System (DPS).",
+  "historicalPeriod": "1968-1972",
+  "crewCapacity": 3,
+  "dryMassTotalKg": 16400,
+  "wetMassTotalKg": 45200,
+  "maxPayloadCapacityKg": 1050,
+  "stages": [
+    {
+      "stageNumber": 1,
+      "stageName": "Service Module (AJ10-137 SPS)",
+      "dryMassKg": 6110,
+      "propellantMassKg": 18410,
+      "propulsion": {
+        "engineName": "Aerojet AJ10-137",
+        "propulsionType": "hypergolic",
+        "thrustVacuumKn": 91.2,
+        "ispVacuumSec": 314,
+        "propellant": "Aerozine 50 / Nitrogen Tetroxide (N2O4)",
+        "burnTimeSec": 750,
+        "throttleable": false,
+        "reignitionsMax": 50
+      },
+      "rcsThrustKn": 0.44,
+      "stagingDeltaVKms": 2.80
+    },
+    {
+      "stageNumber": 2,
+      "stageName": "Lunar Module Descent Stage (LM DPS)",
+      "dryMassKg": 2134,
+      "propellantMassKg": 8200,
+      "propulsion": {
+        "engineName": "TRW Descent Propulsion System (DPS)",
+        "propulsionType": "hypergolic",
+        "thrustVacuumKn": 45.0,
+        "ispVacuumSec": 311,
+        "propellant": "Aerozine 50 / Nitrogen Tetroxide (N2O4)",
+        "burnTimeSec": 910,
+        "throttleable": true,
+        "minThrottlePercent": 10,
+        "maxThrottlePercent": 100,
+        "reignitionsMax": 3
+      },
+      "rcsThrustKn": 0.44,
+      "stagingDeltaVKms": 2.50
+    },
+    {
+      "stageNumber": 3,
+      "stageName": "Lunar Module Ascent Stage (LM APS)",
+      "dryMassKg": 2150,
+      "propellantMassKg": 2350,
+      "propulsion": {
+        "engineName": "Bell Aerospace Ascent Propulsion System (APS)",
+        "propulsionType": "hypergolic",
+        "thrustVacuumKn": 15.6,
+        "ispVacuumSec": 311,
+        "propellant": "Aerozine 50 / Nitrogen Tetroxide (N2O4)",
+        "burnTimeSec": 465,
+        "throttleable": false,
+        "reignitionsMax": 2
+      },
+      "rcsThrustKn": 0.44,
+      "stagingDeltaVKms": 2.22
+    }
+  ],
+  "powerSystem": {
+    "type": "fuel_cells",
+    "outputWatts": 1400
+  },
+  "dimensions": {
+    "heightMeters": 11.0,
+    "diameterMeters": 3.9
+  },
+  "telemetryMetadata": {
+    "maxGForce": 7.0,
+    "maxDynamicPressureKPa": 40.0
+  }
+}
+

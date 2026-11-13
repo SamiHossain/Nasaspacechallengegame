@@ -1,0 +1,44 @@
+# CCGS project configuration — single source of truth for project settings.
+# See .claude/docs/effects-map.md for full schema.
+
+schema_version: 1
+
+framework:
+  version: 1.3.0
+  last_upgraded: 2026-11-09
+
+project:
+  name: "NASA Space Mission Design & Simulation Game"
+  stage: "Concept"
+  goal: "jam"
+
+modes:
+  rigor: "standard"
+  automation: "collaborative"
+
+engine:
+  name: "Web"
+  version: "8.3.4"
+  language: "TypeScript"
+  rendering: "three.js (WebGL)"
+  physics: "none"
+
+specialists:
+  code: "lead-programmer"
+  shader: "lead-programmer"
+  ui: "lead-programmer"
+  additional: []
+
+naming:
+  classes: PascalCase
+  variables: camelCase
+  constants: SCREAMING_SNAKE
+  signals: on_event_name
+  files: kebab-case
+  scenes: snake_case
+
+commands:
+  build: "npm run build"
+  test: "npm test"
+  run: "npm run dev"
+  smoke: "npm run smoke"

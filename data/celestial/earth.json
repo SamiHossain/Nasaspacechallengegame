@@ -1,0 +1,23 @@
+{
+  "id": "earth",
+  "name": "Earth",
+  "category": "planet",
+  "parentBodyId": "sun",
+  "massKg": 5.9722e24,
+  "radiusKm": 6371.0,
+  "gravitationalParameterMu": 398600.4418,
+  "surfaceGravityMs2": 9.80665,
+  "semiMajorAxisKm": 149598023,
+  "orbitalPeriodDays": 365.256,
+  "orbitalInclinationDeg": 0.0,
+  "sphereOfInfluenceKm": 924000.0,
+  "rotationPeriodHours": 23.9344,
+  "atmosphere": {
+    "surfacePressureAtm": 1.0,
+    "scaleHeightKm": 8.5,
+    "entryInterfaceAltitudeKm": 120.0,
+    "hasReentryHeating": true
+  },
+  "colorHex": "#3498db"
+}
+
