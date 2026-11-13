@@ -11,6 +11,7 @@ import spacecraftData from './spacecraft.json';
 import missionsData from './missions.json';
 import earthData from './celestial/earth.json';
 import moonData from './celestial/moon.json';
+import marsData from './celestial/mars.json';
 
 export const spacecraftRegistry: SpacecraftRegistryDTO = spacecraftData as unknown as SpacecraftRegistryDTO;
 export const missionRegistry: MissionRegistryDTO = missionsData as unknown as MissionRegistryDTO;
@@ -18,6 +19,7 @@ export const missionRegistry: MissionRegistryDTO = missionsData as unknown as Mi
 export const celestialBodies: Record<string, CelestialBodyConfig> = {
   earth: earthData as unknown as CelestialBodyConfig,
   moon: moonData as unknown as CelestialBodyConfig,
+  mars: marsData as unknown as CelestialBodyConfig,
 };
 
 /**

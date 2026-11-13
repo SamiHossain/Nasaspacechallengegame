@@ -18,6 +18,8 @@
 export interface GameHook {
   readonly scene: string;
   readonly state: unknown;
+  readonly orbit?: unknown;
+  burn?(dv: number, dir?: 'prograde' | 'retrograde'): void;
   /** The key (a KeyboardEvent.code) goes down for one step. */
   press(code: string): void;
   /** The key is held down, or let go. */

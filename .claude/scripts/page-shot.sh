@@ -212,7 +212,7 @@ TO=""; command -v timeout >/dev/null 2>&1 && TO="timeout $_to"
 TIME="--virtual-time-budget=$WAIT"
 shoot() {
   rm -f "$OUT"
-  ( $TO "$1" --headless=new --user-data-dir="$(native "$PROFILE")" --no-first-run \
+  ( $TO "$1" --headless=new --no-sandbox --user-data-dir="$(native "$PROFILE")" --no-first-run \
       --no-default-browser-check --hide-scrollbars --enable-logging=stderr --v=0 $GL \
       $FA \
       --window-size="${SIZE%x*},${SIZE#*x}" $TIME \

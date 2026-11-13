@@ -1,0 +1,22 @@
+{
+  "id": "mars",
+  "name": "Mars",
+  "category": "planet",
+  "parentBodyId": "sun",
+  "massKg": 6.4171e23,
+  "radiusKm": 3389.5,
+  "gravitationalParameterMu": 42828.37,
+  "surfaceGravityMs2": 3.72,
+  "semiMajorAxisKm": 227920000,
+  "orbitalPeriodDays": 686.98,
+  "orbitalInclinationDeg": 1.85,
+  "sphereOfInfluenceKm": 577000.0,
+  "rotationPeriodHours": 24.6229,
+  "atmosphere": {
+    "surfacePressureAtm": 0.006,
+    "scaleHeightKm": 11.1,
+    "entryInterfaceAltitudeKm": 125.0,
+    "hasReentryHeating": true
+  },
+  "colorHex": "#c0392b"
+}

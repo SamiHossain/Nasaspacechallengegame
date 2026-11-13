@@ -8,6 +8,10 @@ import { FIELD, STEP, makeRng, newState, update, type State, type Tuning } from 
 import { audioContext, clock, install, manual, params, seedFrom } from './hook';
 import { gameState } from './game/state';
 import { MissionSelectUI } from './ui/mission-select';
+import { SpacecraftConfigUI } from './ui/spacecraft-config';
+import { OrbitalSimulation } from './sim/orbital-mechanics';
+import { FlightView } from './sim/flight-view';
+import { TelemetryHUD } from './ui/telemetry-hud';
 
 // ---- Values: data/config.json holds every tuning value ----------------------------------
 const tuning: Tuning = { speed: config.speed.value };
@@ -91,7 +95,8 @@ function reset(): void {
 }
 function render(): void { // the field's x and y are three.js's x and z
   player.position.set(state.x + S / 2, S / 2, state.y + S / 2);
-  player.visible = scene !== 'title';
+  player.visible = scene === 'play' || scene === 'pause';
+  floor.visible = scene === 'play' || scene === 'pause';
   renderer.render(view, camera);
 }
 const scenes: Record<string, Scene> = {
@@ -131,8 +136,39 @@ const scenes: Record<string, Scene> = {
       }
     },
     draw() {
-      const mission = gameState.getActiveMission();
-      say(`<div style="font-size:24px;color:#00e5ff;font-weight:bold">SPACECRAFT CONFIGURATION</div><div style="color:#cbd5e1;margin-top:8px">Configuring vehicle for: ${mission?.title || 'Unknown Mission'}</div><div style="margin-top:16px;color:#64748b;font-size:14px;font-family:monospace">[Story 002: Next Step]</div>`);
+      say('');
+      renderer.render(view, camera);
+    },
+  },
+  flight_simulation: {
+    update(dt) {
+      if (gameState.getState().currentScene !== 'flight_simulation') {
+        scene = gameState.getState().currentScene;
+        return;
+      }
+      if (!orbitalSim) {
+        initFlightSimulation();
+      }
+      orbitalSim?.step(dt);
+      telemetryHUD.update();
+    },
+    draw() {
+      say('');
+      if (flightView) {
+        flightView.render(STEP);
+      } else {
+        renderer.render(view, camera);
+      }
+    },
+  },
+  mission_outcome: {
+    update() {
+      if (gameState.getState().currentScene !== 'mission_outcome') {
+        scene = gameState.getState().currentScene;
+      }
+    },
+    draw() {
+      say('<div style="font-size:24px;color:#00e5ff;font-weight:bold">STAGE 4: MISSION OUTCOME</div>');
       renderer.render(view, camera);
     },
   },
@@ -175,9 +211,45 @@ function tick(): void {
 // for 100 ms on a visible page; a hidden tab stays paused.
 function fallback(): void { if (document.visibilityState === 'visible' && clock.now() - last > 0.1) tick(); }
 
+// Flight Simulation & Orbital State
+let orbitalSim: OrbitalSimulation | null = null;
+let flightView: FlightView | null = null;
+
+function initFlightSimulation(): void {
+  const mission = gameState.getActiveMission();
+  const craft = gameState.getActiveSpacecraft();
+  if (mission && craft) {
+    orbitalSim = new OrbitalSimulation(mission, craft);
+    telemetryHUD.setSimulation(orbitalSim);
+    if (!flightView) {
+      flightView = new FlightView(view, camera, renderer, orbitalSim);
+    } else {
+      flightView.setSimulation(orbitalSim);
+    }
+  }
+}
+
+const telemetryHUD = new TelemetryHUD(
+  undefined,
+  () => {
+    tone(700, 0.15);
+  },
+  () => {
+    tone(880, 0.08, 'sawtooth');
+    flightView?.updateTrajectoryGeometry();
+  }
+);
+telemetryHUD.mount(document.body);
+
 install({
   get scene() { return scene; },
   get state() { return state; },
+  get orbit() { return orbitalSim?.getState(); },
+  burn(dv: number, dir: 'prograde' | 'retrograde' = 'prograde') {
+    orbitalSim?.applyManeuverBurn(dv, dir);
+    flightView?.updateTrajectoryGeometry();
+    telemetryHUD.update();
+  },
   press(code) { hit.add(code); },
   hold(code, on) { if (on) down.add(code); else down.delete(code); },
   step(n = 1, draw = true) { for (let i = 0; i < n; i++) step(); if (draw) scenes[scene].draw(); },
@@ -188,6 +260,12 @@ const missionSelectUI = new MissionSelectUI((mission) => {
   tone(550, 0.1);
 });
 missionSelectUI.mount(document.body);
+
+const spacecraftConfigUI = new SpacecraftConfigUI((craft, mission) => {
+  tone(650, 0.1);
+  initFlightSimulation();
+});
+spacecraftConfigUI.mount(document.body);
 
 reset();
 const asked = params.get('scene');

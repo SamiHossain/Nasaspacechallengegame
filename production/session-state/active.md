@@ -1,3 +1,21 @@
+<!-- STATUS -->
+Epic:
+Feature:
+Task:
+<!-- /STATUS -->
+
+<!-- CHECKPOINT -->
+**Updated:** 2026-11-13
+**Branch:** `main`
+**Current task:** /dev-story — production/epics/core-loop/story-003-trajectory-simulation.md (Story 003: 3D Trajectory & Orbital Flight Simulation)
+**Next step:** /code-review src/sim/orbital-mechanics.ts src/sim/flight-view.ts src/ui/telemetry-hud.ts src/main.ts tests/unit/orbital_mechanics.test.ts, then /story-done production/epics/core-loop/story-003-trajectory-simulation.md
+**Blocked on:** nothing
+**Files in progress:** src/sim/orbital-mechanics.ts, src/sim/flight-view.ts, src/ui/telemetry-hud.ts, src/main.ts, src/hook.ts, tests/unit/orbital_mechanics.test.ts
+**Run result:** OBSERVED — Stage 3 3D Orbital Trajectory & Telemetry HUD in production/qa/evidence/story-003-trajectory-simulation/flight-simulation.png
+**Own calls:** Registered Mars celestial configuration in data/celestial/mars.json; implemented 128-segment Keplerian trajectory line and apsis markers; integrated time-warp (1x-1000x) and prograde/retrograde impulse burns
+**Open questions:** none
+<!-- /CHECKPOINT -->
+
 # Active Session State
 
 **Date:** 2026-11-13

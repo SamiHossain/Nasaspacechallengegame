@@ -6,7 +6,9 @@
  * thrust-to-weight metrics, and flight readiness evaluation.
  */
 
-import type { SpacecraftDTO, MissionDTO } from '../../data/index';
+import { calculateSpacecraftTotalDeltaV, type SpacecraftDTO, type MissionDTO } from '../../data/index';
+
+export { calculateSpacecraftTotalDeltaV };
 
 export const STANDARD_GRAVITY_G0 = 9.80665; // m/s^2
 
@@ -83,6 +85,25 @@ export function calculateMassBreakdown(
 }
 
 /**
+ * Calculates vacuum Delta-V in km/s for a single propulsion stage.
+ */
+export function calculateStageDeltaV(
+  stage: SpacecraftDTO['stages'][number],
+  spacecraftDryMassKg: number,
+  payloadMassKg: number = 0
+): number {
+  const excessDryMass = Math.max(0, spacecraftDryMassKg - stage.dry_mass_kg);
+  const effectiveDryMass = stage.dry_mass_kg + excessDryMass + payloadMassKg;
+  const effectiveWetMass = effectiveDryMass + stage.propellant_mass_kg;
+
+  if (effectiveDryMass > 0 && effectiveWetMass > effectiveDryMass && stage.propulsion.isp_vacuum_s > 0) {
+    const deltaVMs = stage.propulsion.isp_vacuum_s * STANDARD_GRAVITY_G0 * Math.log(effectiveWetMass / effectiveDryMass);
+    return deltaVMs / 1000.0;
+  }
+  return 0;
+}
+
+/**
  * Calculates stage-by-stage delta-v and propulsion metrics using the Tsiolkovsky equation.
  */
 export function calculateStagingProfile(
@@ -101,16 +122,11 @@ export function calculateStagingProfile(
   for (let i = 0; i < spacecraft.stages.length; i++) {
     const stage = spacecraft.stages[i];
 
-    // Excess dry mass of vehicle (command module, capsule, bus structure)
     const excessDryMass = Math.max(0, spacecraft.dry_mass_kg - stage.dry_mass_kg);
     const effectiveDryMass = stage.dry_mass_kg + excessDryMass + massBreakdown.payloadMassKg;
     const effectiveWetMass = effectiveDryMass + stage.propellant_mass_kg;
 
-    let deltaVKms = 0;
-    if (effectiveDryMass > 0 && effectiveWetMass > effectiveDryMass && stage.propulsion.isp_vacuum_s > 0) {
-      const deltaVMs = stage.propulsion.isp_vacuum_s * STANDARD_GRAVITY_G0 * Math.log(effectiveWetMass / effectiveDryMass);
-      deltaVKms = deltaVMs / 1000.0;
-    }
+    const deltaVKms = calculateStageDeltaV(stage, spacecraft.dry_mass_kg, massBreakdown.payloadMassKg);
 
     // Nominal burn time: t_burn = (m_prop * g0 * Isp) / (Thrust * 1000)
     let burnTimeSec = 0;

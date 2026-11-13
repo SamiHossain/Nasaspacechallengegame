@@ -246,11 +246,11 @@ export class SpacecraftConfigUI {
             <!-- Vehicle Mass Fractions Table -->
             <div style="background: #0d131f; border: 1px solid #1e293b; border-radius: 6px; padding: 14px;">
               <div style="font-size: 11px; color: #00e5ff; font-family: monospace; text-transform: uppercase; margin-bottom: 8px;">
-                TSIOLKOVSKY MASS FRACTIONS ($m_0 / m_f$)
+                TSIOLKOVSKY MASS FRACTIONS (m<sub>0</sub> / m<sub>f</sub>)
               </div>
               <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; font-family: monospace;">
                 <div style="background: #111827; padding: 8px; border-radius: 4px;">
-                  <div style="font-size: 10px; color: #64748b;">DRY MASS ($m_f$)</div>
+                  <div style="font-size: 10px; color: #64748b;">DRY MASS (m<sub>f</sub>)</div>
                   <div style="font-size: 15px; font-weight: bold; color: #e2e8f0;">${readiness.massBreakdown.totalDryMassKg.toLocaleString()} kg</div>
                 </div>
                 <div style="background: #111827; padding: 8px; border-radius: 4px;">
@@ -262,7 +262,7 @@ export class SpacecraftConfigUI {
                   <div style="font-size: 15px; font-weight: bold; color: #a855f7;">${readiness.massBreakdown.payloadMassKg.toLocaleString()} kg</div>
                 </div>
                 <div style="background: #111827; padding: 8px; border-radius: 4px;">
-                  <div style="font-size: 10px; color: #64748b;">LIFTOFF MASS ($m_0$)</div>
+                  <div style="font-size: 10px; color: #64748b;">LIFTOFF MASS (m<sub>0</sub>)</div>
                   <div style="font-size: 15px; font-weight: bold; color: #00e5ff;">${readiness.massBreakdown.totalWetMassKg.toLocaleString()} kg</div>
                 </div>
               </div>
@@ -280,7 +280,7 @@ export class SpacecraftConfigUI {
                     <th style="padding: 6px 8px;">STAGE</th>
                     <th style="padding: 6px 8px;">ENGINE</th>
                     <th style="padding: 6px 8px;">THRUST</th>
-                    <th style="padding: 6px 8px;">$I_{sp}$ (VAC)</th>
+                    <th style="padding: 6px 8px;">I<sub>sp</sub> (VAC)</th>
                     <th style="padding: 6px 8px;">BURN TIME</th>
                     <th style="padding: 6px 8px; text-align: right;">STAGE &Delta;v</th>
                   </tr>

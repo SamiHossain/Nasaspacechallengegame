@@ -1,0 +1,4 @@
+Reviewed-Content-Hash: src/ui/spacecraft-config.ts a2a8d0cdee3e12c825e7f0f43f71a71bea7129a6
+Reviewed-Content-Hash: src/game/staging-calculator.ts 282387be3ce7fe5ae812377566e8420c4e2187f8
+Reviewed-Content-Hash: src/main.ts f4fe14f8137dd2fe5dbca7cd50404e8a5a70f1bd
+Reviewed-Content-Hash: tests/unit/staging_calculator.test.ts aa6ddb0537a80e31fc9756edd00c3a28f6c8b3a5

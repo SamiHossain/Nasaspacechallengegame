@@ -25,7 +25,7 @@ Implements the end-to-end 4-stage core gameplay loop of the NASA Space Mission D
 | # | Story | Type | Status | Estimate |
 |---|-------|------|--------|----------|
 | 001 | [Mission Selection Screen & Data Provider](file:///d:/Nasa%20Space/production/epics/core-loop/story-001-mission-selection.md) | UI | Complete | S |
-| 002 | [Spacecraft & Staging Configuration](file:///d:/Nasa%20Space/production/epics/core-loop/story-002-spacecraft-configuration.md) | Logic / UI | Ready | M |
+| 002 | [Spacecraft & Staging Configuration](file:///d:/Nasa%20Space/production/epics/core-loop/story-002-spacecraft-configuration.md) | Logic / UI | Complete | M |
 | 003 | [3D Trajectory & Orbital Flight Simulation](file:///d:/Nasa%20Space/production/epics/core-loop/story-003-trajectory-simulation.md) | Visual/Feel | Ready | M |
 | 004 | [Mission Outcome & Historical Benchmark Evaluation](file:///d:/Nasa%20Space/production/epics/core-loop/story-004-mission-outcome.md) | Logic / UI | Ready | S |
 

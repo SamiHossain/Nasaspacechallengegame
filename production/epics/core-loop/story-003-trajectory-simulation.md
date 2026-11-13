@@ -1,7 +1,7 @@
 # Story 003: 3D Trajectory & Orbital Flight Simulation
 
 > **Epic**: Core Gameplay Loop (`core-loop`)
-> **Status**: Ready
+> **Status**: In Progress
 > **Layer**: Core / Simulation
 > **Type**: Visual/Feel
 > **Estimate**: M
@@ -53,5 +53,7 @@
 - `src/sim/orbital-mechanics.ts`
 - `src/sim/flight-view.ts`
 - `src/ui/telemetry-hud.ts`
+- `src/main.ts`
+- `src/hook.ts`
 - `tests/unit/orbital_mechanics.test.ts`
 
