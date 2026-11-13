@@ -1,0 +1,4 @@
+Reviewed-Content-Hash: src/game/evaluator.ts e407c313b193403ab338ff34ad44a52eb73ebaf2
+Reviewed-Content-Hash: src/ui/mission-outcome.ts ed1c869dd79e0de73aa85dd8f12215b860606aff
+Reviewed-Content-Hash: src/main.ts 7c5e523c084619e69087d3a441453cfcff0037e1
+Reviewed-Content-Hash: tests/unit/evaluator.test.ts 97ae47a1276b86c725c01dda569e3c33f58a5f98

@@ -1,7 +1,7 @@
 # Story 004: Mission Outcome & Historical Benchmark Evaluation
 
 > **Epic**: Core Gameplay Loop (`core-loop`)
-> **Status**: Ready
+> **Status**: In Progress
 > **Layer**: Core / Logic
 > **Type**: Logic / UI
 > **Estimate**: S
@@ -49,5 +49,6 @@
 
 - `src/game/evaluator.ts`
 - `src/ui/mission-outcome.ts`
+- `src/main.ts`
 - `tests/unit/evaluator.test.ts`
 

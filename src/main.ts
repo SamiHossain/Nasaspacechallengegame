@@ -12,6 +12,7 @@ import { SpacecraftConfigUI } from './ui/spacecraft-config';
 import { OrbitalSimulation } from './sim/orbital-mechanics';
 import { FlightView } from './sim/flight-view';
 import { TelemetryHUD } from './ui/telemetry-hud';
+import { MissionOutcomeUI } from './ui/mission-outcome';
 
 // ---- Values: data/config.json holds every tuning value ----------------------------------
 const tuning: Tuning = { speed: config.speed.value };
@@ -168,7 +169,7 @@ const scenes: Record<string, Scene> = {
       }
     },
     draw() {
-      say('<div style="font-size:24px;color:#00e5ff;font-weight:bold">STAGE 4: MISSION OUTCOME</div>');
+      say('');
       renderer.render(view, camera);
     },
   },
@@ -267,9 +268,24 @@ const spacecraftConfigUI = new SpacecraftConfigUI((craft, mission) => {
 });
 spacecraftConfigUI.mount(document.body);
 
+const missionOutcomeUI = new MissionOutcomeUI(
+  () => orbitalSim,
+  () => {
+    tone(520, 0.1);
+    initFlightSimulation();
+  },
+  () => {
+    tone(440, 0.1);
+  }
+);
+missionOutcomeUI.mount(document.body);
+
 reset();
 const asked = params.get('scene');
 scene = asked && asked in scenes ? asked : 'title';
+if (scene === 'flight_simulation' || scene === 'mission_outcome') {
+  initFlightSimulation();
+}
 gameState.setScene(scene === 'title' ? 'title' : (scene as any));
 addEventListener('resize', fit); fit();
 if (manual) scenes[scene].draw(); // ?manual=1: no loop; only window.game.step() moves the game
